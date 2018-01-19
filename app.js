@@ -129,37 +129,6 @@ function onEachStep() {
         ball.x += ball.vx;
         ball.y += ball.vy;
 
-        /* if (ball.y >= canvas.height - ball.radius) {
-             //ball.y = canvas.height - radius;
-             ball.vy *= -1;
-         }
-         if (ball.x >= canvas.width - ball.radius) {
-             //  ball.x = canvas.width + radius;
-             ball.vx *= -1;
-         }
-         if (ball.y <= ball.radius+1){
-             ball.vy *= -1;
-         }
-         if (ball.x <= ball.radius){
-             ball.vx *= -1;
-         }*/
-
-        /*if (ball.y >= hgt - ball.radius) {      //past bottom border, then rebounds
-            //ball.y = canvas.height - radius;
-            ball.vy *= -1;
-        }
-        if (ball.x >= canvas.width - ball.radius) {   //past right border, go to next line
-            //  ball.x = canvas.width + radius;
-            //ball.vx *= -1;
-            if ((hgt*2 + gap*2) > ball.y ) {
-                ball.x = ball.radius + 1;
-                ball.y += (hgt + gap);
-            }
-            else if((hgt*2 + gap*2) <= ball.y && (hgt*3 + gap*2) >= ball.y ) ball.count++;
-        }
-        if (ball.y <= ball.radius+1){            //past top border, rebound
-            ball.vy *= -1;
-        }*/
         if (ball.rowNumber == 1) {
             if (ball.y >= hgt + ball.radius) {      //past bottom border, then rebounds
                 if (ball.vy > 0)
@@ -206,10 +175,6 @@ function onEachStep() {
                     balls.splice(i, 1);
                 }
             }
-
-            /*if ((hgt*2 + gap*2) > ball.y ) {
-            }*/
-            // else if((hgt*2 + gap*2) <= ball.y && (hgt*3 + gap*2) >= ball.y ) ball.count++;
         }
 
         ball.draw(context);
@@ -253,12 +218,3 @@ function afterCollision(b1, b2) {
     b2.draw(context);
 
 }
-
-
-
-
-
-
-
-
-
